@@ -25,9 +25,13 @@ struct CTextStack * render_interface(char *token){
                 s->close(s,H3);
                 s->$open(s,FORM,R"(action="/translate_route" method="POST" )");
     
-
-                
+                    
+                    
                     s->$open(s,"textarea",R"( name="eng" placeholder="Enter string" )");
+                        if(token != NULL){
+                            s->text(s,token);
+                        }
+                    
                     s->close(s,"textarea");
                     s->auto$close(s,BR,"");
                     s->auto$close(s,BR,"");
@@ -37,15 +41,7 @@ struct CTextStack * render_interface(char *token){
 
                     s->close(s,FORM);
 
-                    if(token != NULL){
-                        s->open(s,H4);
-
-                            s->segment_text(s,"MORSE CODE FORMAT:");
-                            s->auto$close(s,BR,"");
-                            s->segment_text(s,token);
-                            s->close(s,H4);
-                        
-                    }
+            
 
             s->close(s,DIV);
 

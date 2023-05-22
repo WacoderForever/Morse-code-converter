@@ -16,7 +16,8 @@ char *generate_morse(char *eng){
     int size=strlen(eng);
 
     char *text=malloc(sizeof(char)*size*6);
-    
+    text[0]='\0';
+
     for(int pos=0;pos<size;pos++){
         
     
@@ -80,5 +81,6 @@ char *generate_morse(char *eng){
 
     
     }
+    text[strlen(text)-1]='\0';
     return text;
 }
