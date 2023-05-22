@@ -1,6 +1,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -11,7 +12,7 @@
 
 #include "interfaces/render_interface.c"
 #include "public_routes/main_route.c"
-#include "public_routes/translate.c"
+#include "public_routes/translate_route.c"
 
 
 struct CwebHttpResponse *main_sever(struct CwebHttpRequest *request ){
@@ -19,7 +20,7 @@ struct CwebHttpResponse *main_sever(struct CwebHttpRequest *request ){
     //when short is clicked
     
     if(strcmp(route,"/translate_route") == 0) {
-        return morse_route(request);
+        return translate_route(request);
     }
 
 
@@ -30,7 +31,11 @@ struct CwebHttpResponse *main_sever(struct CwebHttpRequest *request ){
 int main(){
 
     for(int i=3000;i< 4000;i++){
-        
+           
+        struct CwebSever *sever = newCwebSever(i, main_sever);
+        sever->single_process = true;
+        sever->start(sever);
+        sever->free(sever);
     }
 
     return 0;

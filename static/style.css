@@ -10,20 +10,20 @@ body{
 a{
 color: red;
 }
-input{
-text-align: center;
-text-decoration-color: black;
-width: 30vw;
-height: 7vh;
+
+textarea{
+
+width: 50vw;
+height: 30vh;
 border-radius: 5px;
 margin-top: 2vh;
 border: transparent;
-
 color: black;
 opacity: 0.65;
 background-color: rgb(242, 243, 247);
 font-size: 3vh;
 }
+
 .center{
 margin-top: 20vh;
 margin-left: 0vw;
