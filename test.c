@@ -1,4 +1,4 @@
-#include "eng_morse.c"
+#include "morse/english_to_morse.c"
 #include <stdio.h>
 
 int main(){
