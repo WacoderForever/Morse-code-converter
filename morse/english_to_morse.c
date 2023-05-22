@@ -1,6 +1,4 @@
-#include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
+
 
 void convert_char_to_morse(char *text, char current_char,char tested, char *conversion){
         

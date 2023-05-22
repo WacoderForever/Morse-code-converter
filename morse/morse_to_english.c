@@ -1,9 +1,5 @@
 
-#include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
+
 
 void change_morse_string_to_char(char*morse_text,char *text, char *morse_char, char eng_char,int *pos){
     
