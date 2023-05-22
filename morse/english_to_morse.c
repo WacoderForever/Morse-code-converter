@@ -8,10 +8,11 @@ void convert_char_to_morse(char *text, char current_char,char tested, char *conv
 
     if(current_char ==tested||current_char  == upper){ 
             text=strcat(text,conversion); 
-            strcat(text,"  ");
+            strcat(text," ");
     }
 
 }
+
 
 char *generate_morse(char *eng){
     int size=strlen(eng);
@@ -19,7 +20,8 @@ char *generate_morse(char *eng){
     char *text=malloc(sizeof(char)*size*6);
     
     for(int pos=0;pos<size;pos++){
-
+        
+    
         convert_char_to_morse(text,eng[pos],'a',"._");        
         convert_char_to_morse(text,eng[pos],'b',"_...");
         convert_char_to_morse(text,eng[pos],'c',"_._.");
