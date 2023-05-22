@@ -1,5 +1,5 @@
 struct CwebHttpResponse * morse_route(struct CwebHttpRequest *request){
-    request->read_content(request,3000);
+    request->read_content(request,20000);
 
     char *eng = request->get_param(request,"eng");
 

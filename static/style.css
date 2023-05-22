@@ -3,7 +3,8 @@ body{
     background-image: url("smart-cache='wallpaper.png'");
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    background-color: black;
+    color:white;
 
 }
 a{
@@ -11,16 +12,16 @@ color: red;
 }
 input{
 text-align: center;
-text-decoration-color: blue;
+text-decoration-color: black;
 width: 30vw;
 height: 7vh;
 border-radius: 5px;
 margin-top: 2vh;
 border: transparent;
 
-color: grey;
+color: black;
 opacity: 0.65;
-background-color: rgb(235, 235, 235);
+background-color: rgb(242, 243, 247);
 font-size: 3vh;
 }
 .center{
@@ -37,9 +38,9 @@ height: 5vh;
 border-radius: 5px;
 margin-top: 1vh;
 border: transparent;
-background-color: rgb(18, 49, 143);
+background-color:white;
 font-size: 4vh;
-color: rgb(255, 255, 255);
+color: black;
 }
 
 h3,h4{

@@ -8,8 +8,6 @@
 
 
 struct CwebHttpResponse *main_sever(struct CwebHttpRequest *request ){
-    request->read_content(request,2000);
-
     char *route = request->route;
     //when short is clicked
     if(strcmp(route,"/morse_route") == 0) {
