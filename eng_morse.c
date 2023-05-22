@@ -2,196 +2,84 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+void convert_char_to_morse(char *text, char current_char,char tested, char *conversion){
+        
+    char upper = toupper(tested);
+
+    if(current_char ==tested||current_char  == upper){ 
+            text=strcat(text,conversion); 
+            strcat(text,"  ");
+    }
+
+}
+
 char *generate_morse(char *eng){
     int size=strlen(eng);
-    int pos=0;
-    char *token=malloc(sizeof(char)*size*5);
-    while(pos<size){
-        if(eng[pos]=='a'|| eng[pos]=='A'){
-            char *rep="._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='b'|| eng[pos]=='B'){
-            char *rep="_...";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='c'|| eng[pos]=='C'){
-            char *rep="_._.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='d'|| eng[pos]=='D'){
-            char *rep="_..";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='e'|| eng[pos]=='E'){
-            char *rep=".";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='f'|| eng[pos]=='F'){
-            char *rep=".._.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='g'|| eng[pos]=='G'){
-            char *rep="__.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='h'|| eng[pos]=='H'){
-            char *rep="....";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='i'|| eng[pos]=='I'){
-            char *rep="..";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='j'|| eng[pos]=='J'){
-            char *rep=".___";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='k'|| eng[pos]=='K'){
-            char *rep="_._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='l'|| eng[pos]=='L'){
-            char *rep="._..";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='m'|| eng[pos]=='M'){
-            char *rep="__";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='n'|| eng[pos]=='N'){
-            char *rep="_.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='o'|| eng[pos]=='O'){
-            char *rep="___";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='p'|| eng[pos]=='P'){
-            char *rep=".__.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='q'|| eng[pos]=='Q'){
-            char *rep="__._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='r'|| eng[pos]=='R'){
-            char *rep="._.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='s'|| eng[pos]=='S'){
-            char *rep="...";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='t'|| eng[pos]=='T'){
-            char *rep="_";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='u'|| eng[pos]=='U'){
-            char *rep=".._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='v'|| eng[pos]=='V'){
-            char *rep="..._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='w'|| eng[pos]=='W'){
-            char *rep=".__";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='x'|| eng[pos]=='X'){
-            char *rep="_.._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='y'|| eng[pos]=='Y'){
-            char *rep="_.__";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='z'|| eng[pos]=='Z'){
-            char *rep="__..";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='1'){
-            char *rep=".____";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='2'){
-            char *rep="..___";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='3'){
-            char *rep="...__";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='4'){
-            char *rep="...._";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='5'){
-            char *rep=".....";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='6'){
-            char *rep="_....";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='7'){
-            char *rep="__...";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='8'){
-            char *rep="___..";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='9'){
-            char *rep="____.";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(eng[pos]=='0'){
-            char *rep="_____";
-            token=strcat(token,rep);
-            ++pos;
-        }
-         if(isspace(eng[pos])!=){
-            char *rep=" ";
-            token=strcat(token,rep);
-            ++pos;
-        }
+
+    char *text=malloc(sizeof(char)*size*6);
+    
+    for(int pos=0;pos<size;pos++){
+
+        convert_char_to_morse(text,eng[pos],'a',"._");        
+        convert_char_to_morse(text,eng[pos],'b',"_...");
+        convert_char_to_morse(text,eng[pos],'c',"_._.");
+        convert_char_to_morse(text,eng[pos],'d',"_..");
+        convert_char_to_morse(text,eng[pos],'e',".");
+        convert_char_to_morse(text,eng[pos],'f',".._.");
+        convert_char_to_morse(text,eng[pos],'g',"__.");
+        convert_char_to_morse(text,eng[pos],'h',"....");
+        convert_char_to_morse(text,eng[pos],'i',"..");
+        convert_char_to_morse(text,eng[pos],'j',".___");
+        convert_char_to_morse(text,eng[pos],'k',"_._");
+        convert_char_to_morse(text,eng[pos],'l',"._..");
+        convert_char_to_morse(text,eng[pos],'m',"__");
+        convert_char_to_morse(text,eng[pos],'n',"_.");
+        convert_char_to_morse(text,eng[pos],'o',"___");
+        convert_char_to_morse(text,eng[pos],'p',".__.");
+        convert_char_to_morse(text,eng[pos],'q',"__._");
+        convert_char_to_morse(text,eng[pos],'r',"._.");
+        convert_char_to_morse(text,eng[pos],'s',"...");
+        convert_char_to_morse(text,eng[pos],'t',"_");
+        convert_char_to_morse(text,eng[pos],'u',".._");
+        convert_char_to_morse(text,eng[pos],'v',"..._");
+        convert_char_to_morse(text,eng[pos],'w',".__");
+        convert_char_to_morse(text,eng[pos],'x',"_.._");
+        convert_char_to_morse(text,eng[pos],'y',"_.__");
+        convert_char_to_morse(text,eng[pos],'z',"__..");
+        //nnumbers
+        convert_char_to_morse(text,eng[pos],'1',".____");
+        convert_char_to_morse(text,eng[pos],'2',"..___");
+        convert_char_to_morse(text,eng[pos],'3',"...__");
+        convert_char_to_morse(text,eng[pos],'4',"...._");
+        convert_char_to_morse(text,eng[pos],'5',".....");
+        convert_char_to_morse(text,eng[pos],'6',"_....");
+        convert_char_to_morse(text,eng[pos],'7',"__...");
+        convert_char_to_morse(text,eng[pos],'8',"___..");
+        convert_char_to_morse(text,eng[pos],'9',"____.");
+        convert_char_to_morse(text,eng[pos],'0',"_____");
+        //special characters
+        convert_char_to_morse(text,eng[pos],' ',"/");
+        convert_char_to_morse(text,eng[pos],'.',".-.-.-");
+        convert_char_to_morse(text,eng[pos],',',"--..--");
+        convert_char_to_morse(text,eng[pos],'?',"..--..");
+        convert_char_to_morse(text,eng[pos],'\'',".----.");
+        convert_char_to_morse(text,eng[pos],'!',"-.-.--");
+        convert_char_to_morse(text,eng[pos],'/',"-..-.");
+        convert_char_to_morse(text,eng[pos],'(',"-.--.");
+        convert_char_to_morse(text,eng[pos],')',"-.--.-");
+        convert_char_to_morse(text,eng[pos],'&',".-...");
+        convert_char_to_morse(text,eng[pos],':',"---...");
+        convert_char_to_morse(text,eng[pos],';',"-.-.-.");
+        convert_char_to_morse(text,eng[pos],'=',"-...-");
+        convert_char_to_morse(text,eng[pos],'+',".-.-.");
+        convert_char_to_morse(text,eng[pos],'-',"-....-");
+        convert_char_to_morse(text,eng[pos],'_',"..--.-");
+        convert_char_to_morse(text,eng[pos],'"',".-..-.");
+        convert_char_to_morse(text,eng[pos],'$',"...-..-");
+        convert_char_to_morse(text,eng[pos],'@',".--.-.");
+
+     
+
     }
-    return token;
+    return text;
 }
