@@ -187,7 +187,7 @@ char *generate_morse(char *eng){
             token=strcat(token,rep);
             ++pos;
         }
-         if(eng[pos]==(char)32){
+         if(isspace(eng[pos])!=0){
             char *rep=" ";
             token=strcat(token,rep);
             ++pos;
