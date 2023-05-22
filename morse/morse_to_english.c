@@ -23,7 +23,6 @@ char *morse_to_english(char *morse_text){
     int size = strlen(morse_text);
     char *text = malloc(sizeof(char)*size);
 
-
     for(int pos=0;pos < size; pos++){
 
         change_morse_string_to_char(morse_text,text,"._",'a',&pos);
