@@ -1,0 +1,58 @@
+body{
+        
+    background-image: url("smart-cache='wallpaper.png'");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+}
+a{
+color: red;
+}
+input{
+text-align: center;
+text-decoration-color: blue;
+width: 30vw;
+height: 7vh;
+border-radius: 5px;
+margin-top: 2vh;
+border: transparent;
+
+color: grey;
+opacity: 0.65;
+background-color: rgb(235, 235, 235);
+font-size: 3vh;
+}
+.center{
+margin-top: 20vh;
+margin-left: 0vw;
+text-align: center;
+
+}
+button{
+
+text-align: center;
+width: 12vw;
+height: 5vh;
+border-radius: 5px;
+margin-top: 1vh;
+border: transparent;
+background-color: rgb(18, 49, 143);
+font-size: 4vh;
+color: rgb(255, 255, 255);
+}
+
+h3,h4{
+margin-top: 2vh;
+
+font-style: inherit;
+}
+h3{  
+
+font-size: 4vh;
+font-style:sans-serif;
+}
+h4{
+font-size: 3vh;
+
+}
