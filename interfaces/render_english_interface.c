@@ -3,7 +3,7 @@
 //
 
 
-struct CTextStack * render_interface(char *token){
+struct CTextStack * render_english_interface(char *token){
     struct CTextStack *s = newCTextStack(CTEXT_LINE_BREAKER, CTEXT_SEPARATOR);
     s->$open(s,HTML,"lang=\"en\"");
     s->open(s,HEAD);
@@ -18,17 +18,17 @@ struct CTextStack * render_interface(char *token){
 
     s->close(s,HEAD);
         s->open(s,BODY);
-        create_link(s,"Morse to English translator","/english_route");
+        create_link(s,"English to Morse converter","/translate_route");
         s->auto$close(s,BR,"");
             s->$open(s,DIV,R"(class="center")");
                 s->open(s,H3);
-                    s->segment_text(s,"MORSE CODE CONVERTER");
+                    s->segment_text(s,"ENGLISH TRANSLATION");
                 s->close(s,H3);
-                s->$open(s,FORM,R"(action="/translate_route" method="POST" )");
+                s->$open(s,FORM,R"(action="/english_route" method="POST" )");
     
                     
                     
-                    s->$open(s,"textarea",R"( name="eng" placeholder="Enter string" )");
+                    s->$open(s,"textarea",R"( name="morse_text" placeholder="Enter string" )");
                         if(token != NULL){
                             s->text(s,token);
                         }
