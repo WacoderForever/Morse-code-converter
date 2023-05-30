@@ -1,6 +1,4 @@
-
-
-void convert_char_to_morse(char *text, char current_char,char tested, char *conversion){
+  void convert_char_to_morse(char *text, char current_char,char tested, char *conversion){
         
     char upper = toupper(tested);
 
@@ -8,7 +6,6 @@ void convert_char_to_morse(char *text, char current_char,char tested, char *conv
             text=strcat(text,conversion); 
             strcat(text," ");
     }
-
 }
 
 
